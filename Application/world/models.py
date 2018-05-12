@@ -13,181 +13,46 @@ def dict_to_class(dictionary, class_extend): # works only for 2 deep dictionary
             # item = "\'"+item+"\'"
             print('\t\tself.{} = {}'.format(item, dictionary[character][item])) # add items.
 
-obj_dict = {'dagger':{'edible':False,'can_equip':True,'min_damage':2,'max_damage':4,'magic':False,'block':1}, \
-            'sword':{'edible':False,'can_equip':True,'min_damage':4,'max_damage':8,'magic':False,'block':4}, \
-            'long sword':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'spear':{'edibbe':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'battle axe':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'shuriken':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'Tashi':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'Katana':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'Dai-Katana':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'Naginatta':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'long axe':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'club':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'Mace':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
-            'Scimitar':{'edible':False,'can_equip':True,'min_damage':6,'max_damage':11,'magic':False,'block':6}, \
+my_world = {(0, 0): {'location': 'town centre',
+                     'descpt': 'you are at the town center, it\'s beautiful, and there\'s a nice shop with some items for you, there is also a Blacksmith',
+                     'items': ['silver coin', 'dagger', 'wheel', 'sword'],
+                     'characters': ['Shopkeeper', 'Guard', 'Blacksmith']}, \
+            (0, 1): {'location': 'the north',
+                     'descpt': 'you are at the North, it\'s very cold and there\'s an entrance to some caves',
+                     'items': ['coal', 'wood', 'flowers', 'moss'], 'characters': []}, \
+            (1, 1): {'location': 'the north-east',
+                     'descpt': 'you are at the north-east, there are many trees, you can see a river as well',
+                     'items': ['chips', 'wood'], 'characters': []}, \
+            (1, 0): {'location': 'the east',
+                     'descpt': 'you are at the East, it\'s mild and nice and you can see a river',
+                     'items': ['mud', 'wood', 'flowers', 'moss'], 'characters': []}, \
+            (0, -1): {'location': 'the south',
+                      'descpt': 'you are at the south, it\'s very warm and you can see much white sand, there is a tent amazingly decorated',
+                      'items': ['dagger', 'moss'], 'characters': []}, \
+            (1, -1): {'location': 'the south-east',
+                      'descpt': 'you are at the south-east, there\'s an huge forest of palmtrees and you can see the entrance for some dark caves',
+                      'items': ['wheat', 'wood', 'flowers', 'moss'], 'characters': []}, \
+            (-1, 0): {'location': 'the west',
+                      'descpt': 'you are at the west, it\'s beautiful and nice here, there is the entrance to a castle',
+                      'items': ['sword', 'dagger', 'flowers', 'moss'], 'characters': []}, \
+            (-1, -1): {'location': 'the the South-west',
+                       'descpt': 'you are at the south-west, it\'s beautiful and nice here, there is the entrance to a zigurat made of stone',
+                       'items': ['sword', 'dagger', 'flowers', 'moss'], 'characters': []}, \
+            (-1, 1): {'location': 'the North-west',
+                      'descpt': 'you are at the NorthWest forest, it\'s very cold and beautiful and there is the entrance to a castle made of black stone',
+                      'items': ['sword', 'rock', 'rock', 'rock'], 'characters': []}, \
+            (-2, 0): {'location': 'the extreme West',
+                      'descpt': 'you are at the Extreme West forest, it\'s very mild and beautiful and you can see the ocean. There is a boat that will take you to the islands',
+                      'items': ['sword', 'rock', 'rock', 'rock'], 'characters': []}, \
+            (2, 0): {'location': 'the extreme East',
+                     'descpt': 'you are at the Extreme East, it\'s beautiful and nice here, there is the entrance to a sumptuous Palace',
+                     'items': ['gold coin', 'silver coin', 'flowers', 'dagger'],
+                     'characters': ['Ninja', 'Shopkeeper', 'Guard']}, \
+            (0, 2): {'location': 'the North Pole',
+                     'descpt': 'you are at the glaciars of the North Pole, it\'s beautiful and epically cold here. You can see ice and Snow everywhere and it\'s snowing',
+                     'items': ['ice cube', 'arpoon', 'water', 'ice cube'], 'characters': ['Bear Man', 'Viking']}, \
+            (0, -2): {'location': 'The Depths of the Desert',
+                      'descpt': 'you are at the Depths of the Southern Desert, all you can see is sand everywhere and the sun is very hot',
+                      'items': ['rock', 'sand'], 'characters': ['Arab Warrior', 'Guard']} \
             }
 
-
-class Item:
-
-    def __init__(self, name = "Item"):
-        self.name = name
-
-    def __str__(self):
-        return self.name
-
-
-class Dagger(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 2
-        self.max_damage = 4
-        self.magic = False
-        self.block = 1
-
-
-class Sword(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 4
-        self.max_damage = 8
-        self.magic = False
-        self.block = 4
-
-
-class LongSword(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class Spear(Item):
-
-    def __init__(self):
-        self.edibbe = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class BattleAxe(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class Shuriken(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class Tashi(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class Katana(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class DaiKatana(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class Naginatta(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class LongAxe(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class Club(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class Mace(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6
-
-
-class Scimitar(Item):
-
-    def __init__(self):
-        self.edible = False
-        self.can_equip = True
-        self.min_damage = 6
-        self.max_damage = 11
-        self.magic = False
-        self.block = 6

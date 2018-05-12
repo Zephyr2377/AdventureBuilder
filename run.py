@@ -11,11 +11,8 @@
 # -------------------------------------------------------------------------------
 # Version: 0.0.2
 """
-
-
-def main():
-    pass
+from Application import play
 
 
 if __name__ == '__main__':
-    main()
+    play()

@@ -305,8 +305,3 @@ class ArabWarrior(Character):
         self.armor_equip = 'full iron Armor'
         self.weapon_equip = None
 
-
-john = ArabWarrior()
-
-print(john.name)
-print(john)
