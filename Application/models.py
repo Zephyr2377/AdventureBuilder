@@ -1,0 +1,1 @@
+from support import dict_to_class

@@ -26,8 +26,10 @@ if __name__ == '__main__':
 player_name = input("What's your name?")
 rand = ['mud']*6+['grass']*6+['wood']*3+['flowers']*3+['rock']*6+['rags', 'dagger', 'club'] # there should be a way of having different sets of rands for different world parts ( deserts, foests, etc )
 
+#
 characters_rand = ['Demon', 'Knight', 'Amazon', 'Ninja', 'Paladin', 'Barbarian', 'Fairy', 'Minotaur', 'Samurai', 'Onna-Bugeisha', 'Viking', "Arab Warrior", 'Bear Man']
 
+#
 char_items = {'Demon': ['demonic ski boots', 'demonic hair spray', 'demonic coin'], \
               'Guard':['long sword', 'sword', 'spear'], \
               'Amazon':['long sword', 'sword', 'battle axe', 'spear'], \
@@ -37,6 +39,7 @@ char_items = {'Demon': ['demonic ski boots', 'demonic hair spray', 'demonic coin
               }
 
 my_damage=15
+
 char_dict = {'Demon':{'name':'Demon','Foe':True,'Neutral':False,'health':30,'strentght':10,'dexterity':10,'intelligence':10,'constitution':10,'charisma':10,'armor_equip':' ','weapon_equip':''}, \
              'Guard':{'name':'Guard','Foe':False,'Neutral':True,'health':30,'strentght':10,'dexterity':10,'intelligence':10,'constitution':10,'charisma':10,'armor_equip':'full iron Armor','weapon_equip':''}, \
              'Shopkeeper':{'name':'Shopkeeper','Foe':False,'Neutral':True,'health':30,'strentght':10,'dexterity':10,'intelligence':10,'constitution':10,'charisma':10,'armor_equip':'full iron Armor','weapon_equip':''}, \
